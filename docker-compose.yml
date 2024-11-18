@@ -1,0 +1,10 @@
+services:
+  nginx:
+    build: .
+    ports:
+      - "8080:80"
+      - "8044:443"
+    restart: always
+    volumes:
+      - ./app:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
